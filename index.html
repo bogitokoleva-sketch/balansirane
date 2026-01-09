@@ -12,10 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* БОХО ЦВЕТОВА СХЕМА */
+        /* БОХО ЦВЕТОВЕ */
         :root {
             --boho-main: #bc6c4e;
-            --boho-accent: #da8155;
             --boho-bg-light: #fdfaf8;
             --boho-border: #f7ede2;
         }
@@ -23,21 +22,22 @@
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(188, 108, 78, 0.2); }
         
-        /* НОВАТА СНИМКА КАТО ФОН НА ГОРНАТА СЕКЦИЯ */
-        .hero-bg-image { 
-            background-image: linear-gradient(to bottom, rgba(253, 250, 248, 0.85), rgba(253, 250, 248, 0.7)), url('https://i.ibb.co/gMVYqxDG/4-things-happy-people-dont-do-cover.png');
+        /* КОРЕКЦИЯ: НОВАТА СНИМКА (HAPPY PEOPLE) */
+        .hero-section { 
+            background-image: linear-gradient(rgba(253, 250, 248, 0.6), rgba(253, 250, 248, 0.6)), url('https://i.ibb.co/gMVYqxDG/4-things-happy-people-dont-do-cover.png');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
         
-        /* ТВОЯТА ПОРТРЕТНА СНИМКА - БЕЗ ПРОМЯНА */
+        /* ПОРТРЕТНА СНИМКА */
         .profile-img { 
             background-image: url('https://i.ibb.co/S4B8d4j9/viber-image-2025-12-13-23-21-31-839.jpg'); 
             background-size: cover; 
             background-position: center 20%;
         }
 
-        /* ТВОЯТА СНИМКА С ПЛАНИНАТА - БЕЗ ПРОМЯНА */
+        /* ПЛАНИНСКА СНИМКА (БАНЕР) */
         .landscape-banner {
             background-image: linear-gradient(rgba(74, 55, 40, 0.45), rgba(74, 55, 40, 0.45)), url('https://i.ibb.co/BV9HGpTY/158025.jpg');
             background-size: cover;
@@ -57,20 +57,20 @@
         </div>
     </nav>
 
-    <header class="relative pt-28 pb-16 md:pt-48 md:pb-32 hero-bg-image text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <span class="inline-block py-1 px-4 rounded-full bg-white/80 text-[#bc6c4e] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 border border-[#f2cc8f] backdrop-blur-sm">
+    <header class="relative pt-28 pb-16 md:pt-48 md:pb-32 hero-section text-center border-b border-[#f7ede2]">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <span class="inline-block py-1 px-4 rounded-full bg-white/90 text-[#bc6c4e] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 border border-[#f2cc8f] shadow-sm">
                 Персонален коучинг и Психология
             </span>
-            <h1 class="text-3xl md:text-6xl font-serif font-extrabold text-stone-800 leading-tight mb-6">
+            <h1 class="text-3xl md:text-6xl font-serif font-extrabold text-stone-900 leading-tight mb-6 drop-shadow-sm">
                 Преоткрий <span class="text-[#bc6c4e] italic">своя ресурс</span> за промяна
             </h1>
-            <p class="text-base md:text-xl text-stone-800 mb-10 leading-relaxed font-bold bg-white/30 backdrop-blur-sm inline-block px-4 py-2 rounded-xl">
+            <p class="text-base md:text-xl text-stone-800 mb-10 leading-relaxed font-semibold bg-white/40 backdrop-blur-[2px] inline-block px-4 py-2 rounded-lg">
                 Интегриран подход чрез соматична психология и експертен коучинг за постигане на вътрешна яснота.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-[#bc6c4e] text-white rounded-full font-bold shadow-lg hover:bg-[#8d5a44] transition-all text-sm uppercase">Услуги</a>
-                <a href="#about" class="px-8 py-4 bg-white/90 text-[#bc6c4e] rounded-full font-bold border border-[#f7ede2] hover:bg-white transition-all text-sm uppercase">За мен</a>
+                <a href="#services" class="px-8 py-4 bg-[#bc6c4e] text-white rounded-full font-bold shadow-lg hover:bg-[#8d5a44] transition-all text-sm uppercase tracking-wide">Разгледай услугите</a>
+                <a href="#about" class="px-8 py-4 bg-white/90 text-[#bc6c4e] rounded-full font-bold border border-[#f7ede2] hover:bg-white transition-all text-sm uppercase tracking-wide shadow-md">За мен</a>
             </div>
         </div>
     </header>
@@ -94,7 +94,7 @@
     <section class="landscape-banner py-32 md:py-48 text-center text-white relative">
         <div class="max-w-4xl mx-auto px-4">
             <i class="fas fa-quote-left text-[#f2cc8f] text-3xl mb-6 block"></i>
-            <h2 class="text-2xl md:text-4xl font-serif italic leading-relaxed drop-shadow-lg">
+            <h2 class="text-2xl md:text-4xl font-serif italic leading-relaxed drop-shadow-lg text-white">
                 „Коучингът е процес, в който клиентът открива яснота, посока и смисъл.“
             </h2>
         </div>
@@ -164,4 +164,5 @@
 
 </body>
 </html>
+
 
