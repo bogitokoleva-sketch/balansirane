@@ -15,10 +15,11 @@
                 extend: {
                     colors: {
                         boho: {
-                            beige: '#F9F5F2', // Основен фон (пясъчен/кремав)
-                            clay: '#B88B7A',  // Акцентен цвят (керемидено/глина)
-                            sage: '#8A9A8A',  // Вторичен акцент (градински чай)
-                            stone: '#4A4A4A'  // Текст
+                            beige: '#FDF8F3', // Светъл пясък за фон
+                            sand: '#EADDCA',  // Наситен пясък за елементи
+                            clay: '#C18A74',  // Теракота/Глина за акценти
+                            earth: '#8B735B', // Земно кафяво за детайли
+                            stone: '#3E3C3A'  // Тъмен камък за текст
                         }
                     },
                     fontFamily: {
@@ -31,21 +32,29 @@
     </script>
     
     <style>
-        body { background-color: #F9F5F2; color: #4A4A4A; }
+        body { background-color: #FDF8F3; color: #3E3C3A; }
         .hero-title { line-height: 1.1; }
-        /* Декоративен елемент - абстрактно цвете/линия тип Бохо */
-        .boho-shape {
+        
+        /* Меко пясъчно сияние в заден план */
+        .sand-glow {
             position: absolute;
             z-index: -1;
-            opacity: 0.15;
+            background: radial-gradient(circle, #EADDCA 0%, rgba(253, 248, 243, 0) 70%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.4;
+        }
+
+        .custom-shape-divider {
+            fill: #FDF8F3;
         }
     </style>
 </head>
 <body class="font-sans antialiased">
 
-    <nav class="py-8 px-6 md:px-12 flex justify-between items-center">
-        <a href="#" class="text-xl font-serif font-bold tracking-tight">Д-р Б. Колева</a>
-        <div class="hidden md:flex space-x-10 uppercase text-[11px] tracking-[0.2em] font-medium">
+    <nav class="py-8 px-6 md:px-12 flex justify-between items-center bg-transparent">
+        <a href="#" class="text-xl font-serif font-bold tracking-tight text-boho-stone">Д-р Б. Колева</a>
+        <div class="hidden md:flex space-x-10 uppercase text-[11px] tracking-[0.2em] font-semibold text-boho-earth">
             <a href="#about" class="hover:text-boho-clay transition-colors">За мен</a>
             <a href="#services" class="hover:text-boho-clay transition-colors">Услуги</a>
             <a href="#contact" class="hover:text-boho-clay transition-colors">Контакт</a>
@@ -53,111 +62,115 @@
         <a href="#contact" class="md:hidden text-boho-clay"><i class="fas fa-bars text-2xl"></i></a>
     </nav>
 
-    <header class="relative px-6 md:px-12 py-12 md:py-24 max-w-7xl mx-auto overflow-hidden">
-        <div class="boho-shape top-0 right-0 w-64 h-64 bg-boho-sage rounded-full blur-[100px]"></div>
+    <header class="relative px-6 md:px-12 py-12 md:py-24 max-w-7xl mx-auto">
+        <div class="sand-glow -top-20 -right-20"></div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             <div class="order-2 lg:order-1">
-                <span class="inline-block text-boho-clay uppercase text-[12px] tracking-[0.3em] font-bold mb-6">
-                    Кризисен Мениджмънт & Психология
+                <div class="w-12 h-[1px] bg-boho-clay mb-6"></div>
+                <span class="inline-block text-boho-earth uppercase text-[12px] tracking-[0.3em] font-bold mb-6">
+                    Психология & Кризисен Мениджмънт
                 </span>
-                <h1 class="hero-title text-5xl md:text-7xl font-serif mb-8 italic">
-                    Твоят път към <br> <span class="font-normal not-italic">вътрешен баланс.</span>
+                <h1 class="hero-title text-5xl md:text-7xl font-serif mb-8 text-boho-stone">
+                    Намери своя <br> <span class="italic font-normal">вътрешен пристан.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-stone-500 mb-10 max-w-md leading-relaxed font-light">
-                    Пространство за подкрепа, където тялото и умът се срещат, за да преодолеят всяка криза.
+                <p class="text-lg md:text-xl text-boho-earth mb-10 max-w-md leading-relaxed font-light">
+                    Професионална подкрепа в моменти на промяна, вдъхновена от спокойствието на природата и силата на тялото.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#contact" class="px-10 py-5 bg-boho-clay text-white rounded-full font-medium hover:bg-stone-800 transition-all shadow-lg text-center">
+                    <a href="#contact" class="px-10 py-5 bg-boho-clay text-white rounded-full font-medium hover:bg-boho-earth transition-all shadow-md text-center">
                         Запази час
                     </a>
-                    <a href="#services" class="px-10 py-5 border border-stone-300 rounded-full font-medium hover:bg-white transition-all text-center">
-                        Научи повече
+                    <a href="#services" class="px-10 py-5 border border-boho-sand rounded-full font-medium hover:bg-white transition-all text-center text-boho-earth">
+                        Виж услугите
                     </a>
                 </div>
             </div>
 
             <div class="order-1 lg:order-2 relative">
-                <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+                <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-xl border-[12px] border-white">
                     <img src="https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg" alt="Д-р Богомила Колева" class="w-full h-auto object-cover">
                 </div>
-                <div class="absolute -bottom-10 -left-10 w-40 h-40 opacity-20">
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 opacity-30 z-0">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#B88B7A" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.5,81.4,29,73,42.4C64.6,55.8,53.4,68.1,39.7,75.2C26,82.3,9.8,84.2,-5.7,82.2C-21.2,80.2,-36.1,74.3,-48.9,65.2C-61.7,56.1,-72.5,43.8,-78.9,29.8C-85.3,15.8,-87.3,0.1,-84.3,-14.8C-81.3,-29.7,-73.3,-43.8,-62.1,-53.4C-50.9,-63.1,-36.5,-68.3,-22.4,-75.5C-8.3,-82.7,5.5,-91.9,19.3,-88.7C33.1,-85.5,46.9,-70,44.7,-76.4Z" transform="translate(100 100)" />
+                        <path fill="#EADDCA" d="M40,-62.3C52.1,-54.2,62.3,-43,69.7,-30.1C77,-17.2,81.5,-2.6,79.1,11C76.8,24.6,67.6,37.1,56.7,47.2C45.9,57.3,33.5,64.9,19.9,69.5C6.3,74.1,-8.5,75.6,-22.6,71.7C-36.8,67.8,-50.3,58.4,-61,46.3C-71.6,34.2,-79.3,19.3,-80.7,4.1C-82.1,-11.1,-77.2,-26.7,-68.2,-39.3C-59.2,-52,-46.1,-61.7,-32.5,-68.9C-18.9,-76.1,-4.7,-80.8,9,-80.1C22.7,-79.4,35.4,-73.3,40,-62.3Z" transform="translate(100 100)" />
                     </svg>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-24 px-6 bg-white/50">
+    <section id="services" class="py-24 px-6 bg-[#F9F3EE]">
         <div class="max-w-6xl mx-auto text-center mb-20">
-            <h2 class="text-4xl font-serif mb-4">Направления на работа</h2>
-            <div class="w-20 h-1 bg-boho-clay mx-auto"></div>
+            <p class="text-boho-clay font-serif italic mb-2">Как мога да Ви бъда полезна</p>
+            <h2 class="text-4xl font-serif text-boho-stone">Направления</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            <div class="group cursor-pointer">
-                <div class="mb-6 overflow-hidden rounded-3xl">
-                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div class="bg-white p-2 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover rounded-[2rem] mb-6">
+                <div class="p-6">
+                    <h3 class="text-2xl font-serif mb-3 text-boho-stone">Коучинг</h3>
+                    <p class="text-boho-earth font-light text-sm leading-relaxed mb-6">Индивидуални сесии за намиране на ресурси и увереност.</p>
+                    <a href="#contact" class="text-boho-clay text-[11px] font-bold tracking-[0.2em] uppercase">Запиши се →</a>
                 </div>
-                <h3 class="text-2xl font-serif mb-3">Коучинг</h3>
-                <p class="text-stone-500 leading-relaxed font-light mb-4">Личностно израстване и намиране на ресурси в моменти на преход.</p>
-                <a href="#contact" class="text-boho-clay font-bold text-sm tracking-widest uppercase hover:underline">Научи повече</a>
             </div>
-            <div class="group cursor-pointer">
-                <div class="mb-6 overflow-hidden rounded-3xl">
-                    <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee1?auto=format&fit=crop&q=80&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="bg-white p-2 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee1?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover rounded-[2rem] mb-6">
+                <div class="p-6">
+                    <h3 class="text-2xl font-serif mb-3 text-boho-stone">Терапия</h3>
+                    <p class="text-boho-earth font-light text-sm leading-relaxed mb-6">Соматична работа за освобождаване от напрежението.</p>
+                    <a href="#contact" class="text-boho-clay text-[11px] font-bold tracking-[0.2em] uppercase">Запиши се →</a>
                 </div>
-                <h3 class="text-2xl font-serif mb-3">Терапия</h3>
-                <p class="text-stone-500 leading-relaxed font-light mb-4">Соматична психология за преработване на дълбоки емоционални блокажи.</p>
-                <a href="#contact" class="text-boho-clay font-bold text-sm tracking-widest uppercase hover:underline">Научи повече</a>
             </div>
-            <div class="group cursor-pointer">
-                <div class="mb-6 overflow-hidden rounded-3xl">
-                    <img src="https://i.ibb.co/BV9HGpTY/158025.jpg" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="bg-white p-2 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://i.ibb.co/BV9HGpTY/158025.jpg" class="w-full h-56 object-cover rounded-[2rem] mb-6">
+                <div class="p-6">
+                    <h3 class="text-2xl font-serif mb-3 text-boho-stone">Кризисен Мениджмънт</h3>
+                    <p class="text-boho-earth font-light text-sm leading-relaxed mb-6">Експертна стратегия за екипи и лидери в трудна среда.</p>
+                    <a href="#contact" class="text-boho-clay text-[11px] font-bold tracking-[0.2em] uppercase">Запиши се →</a>
                 </div>
-                <h3 class="text-2xl font-serif mb-3">Кризисен Мениджмънт</h3>
-                <p class="text-stone-500 leading-relaxed font-light mb-4">Стратегическа подкрепа за организации и екипи в трудни периоди.</p>
-                <a href="#contact" class="text-boho-clay font-bold text-sm tracking-widest uppercase hover:underline">Научи повече</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto bg-white rounded-[4rem] p-12 md:p-20 shadow-sm border border-stone-100">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-serif mb-4">Свържи се с мен</h2>
-                <p class="text-stone-400 font-light italic">Направи първата крачка към промяната днес.</p>
-            </div>
+    <section id="contact" class="py-24 px-6 bg-boho-beige">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-4xl font-serif mb-6 text-boho-stone">Свържете се с мен</h2>
+            <p class="text-boho-earth mb-12 font-light">Всяко пътуване започва с една малка крачка. Очаквам Вашето съобщение.</p>
             
-            <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="Име" placeholder="Име" class="w-full bg-boho-beige border-none p-5 rounded-2xl focus:ring-1 focus:ring-boho-clay outline-none">
-                    <input type="email" name="Email" placeholder="Имейл" class="w-full bg-boho-beige border-none p-5 rounded-2xl focus:ring-1 focus:ring-boho-clay outline-none">
-                </div>
-                <textarea name="Съобщение" rows="4" placeholder="Твоята история..." class="w-full bg-boho-beige border-none p-5 rounded-2xl focus:ring-1 focus:ring-boho-clay outline-none"></textarea>
+            <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4">
+                <input type="text" name="Име" placeholder="Вашето име" class="w-full bg-white border border-boho-sand p-5 rounded-2xl focus:ring-1 focus:ring-boho-clay outline-none transition-all">
+                <input type="email" name="Email" placeholder="Имейл адрес" class="w-full bg-white border border-boho-sand p-5 rounded-2xl focus:ring-1 focus:ring-boho-clay outline-none transition-all">
+                <textarea name="Съобщение" rows="4" placeholder="С какво мога да Ви помогна?" class="w-full bg-white border border-boho-sand p-5 rounded-2xl focus:ring-1 focus:ring-boho-clay outline-none transition-all"></textarea>
                 
-                <div class="flex items-center justify-between p-5 bg-boho-beige rounded-2xl">
-                    <span class="text-sm font-medium">3 + 4 = ?</span>
-                    <input type="text" name="captcha" pattern="7" required class="w-16 bg-white border-none p-2 rounded-lg text-center font-bold">
+                <div class="flex items-center justify-between p-5 bg-white border border-boho-sand rounded-2xl">
+                    <span class="text-xs text-boho-earth uppercase tracking-widest font-bold">3 + 4 = ?</span>
+                    <input type="text" name="captcha" pattern="7" required class="w-16 bg-boho-beige border-none p-2 rounded-lg text-center font-bold text-boho-clay">
                 </div>
 
-                <button type="submit" class="w-full py-6 bg-boho-clay text-white font-bold rounded-2xl hover:bg-stone-800 transition-colors shadow-lg uppercase tracking-widest">
-                    Изпрати съобщение
+                <button type="submit" class="w-full py-6 bg-boho-stone text-white font-bold rounded-2xl hover:bg-boho-clay transition-all shadow-lg uppercase tracking-[0.2em] text-sm">
+                    Изпрати запитване
                 </button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-[10px] tracking-[0.3em] uppercase text-stone-400">
-        <p>Д-р Богомила Колева &copy; 2025</p>
-        <p class="mt-2">Психология | Коучинг | Кризисен Мениджмънт</p>
+    <footer class="py-16 text-center bg-white border-t border-boho-sand">
+        <p class="font-serif text-lg text-boho-stone mb-2">Д-р Богомила Колева</p>
+        <p class="text-[9px] tracking-[0.4em] uppercase text-boho-earth opacity-60 italic">Пространство за баланс и развитие</p>
+        <div class="mt-8 flex justify-center space-x-6 text-boho-sand">
+            <i class="fab fa-instagram hover:text-boho-clay cursor-pointer transition-colors"></i>
+            <i class="fab fa-linkedin-in hover:text-boho-clay cursor-pointer transition-colors"></i>
+            <i class="far fa-envelope hover:text-boho-clay cursor-pointer transition-colors"></i>
+        </div>
+        <p class="mt-10 text-[10px] text-boho-earth opacity-40">&copy; 2025 Всички права запазени.</p>
     </footer>
 
 </body>
 </html>
+
 
 
 
