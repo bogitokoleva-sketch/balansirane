@@ -12,17 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* БОХО ЦВЕТОВЕ */
         :root {
             --boho-main: #bc6c4e;
             --boho-bg-light: #fdfaf8;
             --boho-border: #f7ede2;
         }
 
-        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden; }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(188, 108, 78, 0.2); }
         
-        /* КОРЕКЦИЯ: НОВАТА СНИМКА (HAPPY PEOPLE) */
         .hero-section { 
             background-image: linear-gradient(rgba(253, 250, 248, 0.6), rgba(253, 250, 248, 0.6)), url('https://i.ibb.co/gMVYqxDG/4-things-happy-people-dont-do-cover.png');
             background-size: cover;
@@ -30,14 +28,12 @@
             background-repeat: no-repeat;
         }
         
-        /* ПОРТРЕТНА СНИМКА */
         .profile-img { 
             background-image: url('https://i.ibb.co/S4B8d4j9/viber-image-2025-12-13-23-21-31-839.jpg'); 
             background-size: cover; 
             background-position: center 20%;
         }
 
-        /* ПЛАНИНСКА СНИМКА (БАНЕР) */
         .landscape-banner {
             background-image: linear-gradient(rgba(74, 55, 40, 0.45), rgba(74, 55, 40, 0.45)), url('https://i.ibb.co/BV9HGpTY/158025.jpg');
             background-size: cover;
@@ -104,18 +100,24 @@
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-16">Насоки на работа</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-[#f7ede2] flex flex-col shadow-sm">
-                    <div class="w-14 h-14 bg-[#f7ede2] text-[#bc6c4e] rounded-2xl flex items-center justify-center mb-6 text-2xl mx-auto"><i class="fas fa-users"></i></div>
-                    <h3 class="text-2xl font-serif font-bold mb-4 text-stone-800">За Екипи</h3>
-                    <p class="text-stone-600 text-sm mb-8 flex-grow">Мотивиране за високи резултати и изграждане на обща посока.</p>
-                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-[#bc6c4e] text-[#bc6c4e] font-bold text-center hover:bg-[#bc6c4e] hover:text-white transition-all text-xs">ЗАПИТВАНЕ</a>
+                
+                <div class="service-card bg-white rounded-[2.5rem] border border-[#f7ede2] flex flex-col shadow-sm">
+                    <img src="https://i.ibb.co/chHz4bLB/businesspeople-office-meeting-hand-shake-1.jpg" alt="Екипи" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-[#f7ede2] text-[#bc6c4e] rounded-xl flex items-center justify-center mb-4 text-xl mx-auto"><i class="fas fa-users"></i></div>
+                        <h3 class="text-2xl font-serif font-bold mb-4 text-stone-800">За Екипи</h3>
+                        <p class="text-stone-600 text-sm mb-8 flex-grow">Мотивиране за високи резултати и изграждане на обща посока.</p>
+                        <a href="#contact" class="w-full block py-4 rounded-xl border-2 border-[#bc6c4e] text-[#bc6c4e] font-bold text-center hover:bg-[#bc6c4e] hover:text-white transition-all text-xs">ЗАПИТВАНЕ</a>
+                    </div>
                 </div>
+
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-[#f7ede2] flex flex-col shadow-sm">
                     <div class="w-14 h-14 bg-[#bc6c4e] text-white rounded-2xl flex items-center justify-center mb-6 text-2xl mx-auto"><i class="fas fa-sync-alt"></i></div>
                     <h3 class="text-2xl font-serif font-bold mb-4 text-stone-800">Екипна Динамика</h3>
                     <p class="text-stone-600 text-sm mb-8 flex-grow">Разрешаване на напрежения и здрава работна среда.</p>
                     <a href="#contact" class="w-full py-4 rounded-xl bg-[#bc6c4e] text-white font-bold text-center shadow-lg hover:opacity-90 transition-all text-xs">НАУЧИ ПОВЕЧЕ</a>
                 </div>
+
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-[#f7ede2] flex flex-col shadow-sm">
                     <div class="w-14 h-14 bg-[#f7ede2] text-[#bc6c4e] rounded-2xl flex items-center justify-center mb-6 text-2xl mx-auto"><i class="fas fa-user-check"></i></div>
                     <h3 class="text-2xl font-serif font-bold mb-4 text-stone-800">Индивидуално</h3>
@@ -164,5 +166,4 @@
 
 </body>
 </html>
-
 
