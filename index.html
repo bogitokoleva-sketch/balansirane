@@ -6,7 +6,7 @@
     <title>Д-р Богомила Колева | Психология и Мениджмънт</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -14,9 +14,10 @@
                 extend: {
                     colors: {
                         boho: {
-                            beige: '#FDF8F3',
-                            clay: '#C18A74',
-                            stone: '#3E3C3A'
+                            beige: '#F9F5F2',
+                            clay: '#B88B7A',
+                            stone: '#4A4A4A',
+                            accent: '#D9C5B2'
                         }
                     },
                     fontFamily: {
@@ -29,153 +30,137 @@
     </script>
     
     <style>
-        /* Специфична структура за Дизайн №1 */
-        body, html { margin: 0; padding: 0; height: 100%; overflow-x: hidden; }
-
-        .hero-split {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+        body { background-color: #F9F5F2; color: #4A4A4A; }
+        
+        /* Специфична подредба на изображенията за Дизайн №3 */
+        .image-stack {
+            position: relative;
+            height: 500px;
             width: 100%;
         }
 
-        @media (min-width: 768px) {
-            .hero-split { flex-direction: row; }
-        }
-
-        /* Стил за всяка колона/секция */
-        .service-column {
-            position: relative;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            cursor: pointer;
-            border-bottom: 1px solid white;
-        }
-
-        @media (min-width: 768px) {
-            .service-column { border-bottom: none; border-right: 1px solid white; }
-            .service-column:last-child { border-right: none; }
-            /* Ефект на разширяване при посочване */
-            .service-column:hover { flex: 1.5; }
-        }
-
-        /* Фонов образ на колоната */
-        .col-bg {
+        .img-main {
             position: absolute;
-            top: 0;
+            width: 65%;
+            height: 400px;
+            object-fit: cover;
+            z-index: 2;
+            top: 50px;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.7);
-            transition: transform 0.6s ease;
-            z-index: 1;
+            border-radius: 4px;
+            box-shadow: 20px 20px 0px #D9C5B2;
         }
 
-        .service-column:hover .col-bg {
-            transform: scale(1.1);
-            filter: brightness(0.5);
-        }
-
-        /* Текст върху колоната */
-        .col-content {
-            position: relative;
-            z-index: 10;
-            color: white;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .col-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .col-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border: 1px solid white;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .service-column:hover .col-btn {
-            background-color: white;
-            color: #3E3C3A;
-        }
-
-        /* Името на практиката - фиксирано */
-        .brand-overlay {
+        .img-secondary {
             position: absolute;
-            top: 40px;
-            left: 40px;
-            z-index: 100;
-            color: white;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+
+        .img-tertiary {
+            position: absolute;
+            width: 40%;
+            height: 200px;
+            object-fit: cover;
+            z-index: 3;
+            bottom: 0;
+            right: 10%;
+            border-radius: 4px;
+            border: 8px solid #F9F5F2;
+        }
+
+        .logo-style {
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-bottom: 2px solid #B88B7A;
+            display: inline-block;
+            margin-bottom: 2rem;
         }
     </style>
 </head>
-<body>
+<body class="font-sans antialiased">
 
-    <div class="brand-overlay">Д-р Богомила Колева</div>
+    <nav class="p-8 flex justify-between items-center">
+        <div class="logo-style">Д-р Б. Колева</div>
+        <div class="hidden md:flex space-x-8 text-[11px] uppercase tracking-widest font-semibold">
+            <a href="#services" class="hover:text-boho-clay transition-colors">Услуги</a>
+            <a href="#contact" class="hover:text-boho-clay transition-colors">Контакт</a>
+        </div>
+    </nav>
 
-    <div class="hero-split">
-        
-        <div class="service-column" onclick="location.href='#contact'">
-            <div class="col-bg" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=1000');"></div>
-            <div class="col-content">
-                <h2 class="col-title">Коучинг</h2>
-                <p class="text-sm uppercase tracking-widest mb-6 opacity-80">Развитие & Лидерство</p>
-                <span class="col-btn">Научи повече</span>
+    <header class="max-w-7xl mx-auto px-6 py-12 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <div class="lg:col-span-5 order-2 lg:order-1">
+                <h1 class="text-5xl lg:text-7xl font-serif mb-8 leading-[1.1]">
+                    Смисъл в <br> <span class="italic text-boho-clay">промяната.</span>
+                </h1>
+                <p class="text-lg text-stone-500 mb-10 leading-relaxed font-light max-w-sm">
+                    Комбинация от трите стълба на Вашето развитие: Коучинг, Терапия и Кризисен мениджмънт.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-boho-stone text-white px-8 py-4 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-boho-clay transition-all">
+                        Запази час
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 order-1 lg:order-2">
+                <div class="image-stack">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=800" class="img-secondary" alt="Офис">
+                    
+                    <img src="https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg" class="img-main" alt="Д-р Колева">
+                    
+                    <img src="https://i.ibb.co/BV9HGpTY/158025.jpg" class="img-tertiary" alt="Кризисен мениджмънт">
+                </div>
             </div>
         </div>
+    </header>
 
-        <div class="service-column" onclick="location.href='#contact'">
-            <div class="col-bg" style="background-image: url('https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg');"></div>
-            <div class="col-content">
-                <h2 class="col-title">Терапия</h2>
-                <p class="text-sm uppercase tracking-widest mb-6 opacity-80">Емоции & Баланс</p>
-                <span class="col-btn">Научи повече</span>
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="border-l-2 border-boho-accent pl-6">
+                    <h3 class="font-serif text-2xl mb-4 italic">Коучинг</h3>
+                    <p class="text-sm text-stone-400 font-light">Личностно израстване през призмата на опита.</p>
+                </div>
+                <div class="border-l-2 border-boho-accent pl-6">
+                    <h3 class="font-serif text-2xl mb-4 italic">Терапия</h3>
+                    <p class="text-sm text-stone-400 font-light">Психологическа подкрепа за вътрешен мир.</p>
+                </div>
+                <div class="border-l-2 border-boho-accent pl-6">
+                    <h3 class="font-serif text-2xl mb-4 italic">Кризисен М.</h3>
+                    <p class="text-sm text-stone-400 font-light">Стратегическо управление на трудни ситуации.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="service-column" onclick="location.href='#contact'">
-            <div class="col-bg" style="background-image: url('https://i.ibb.co/BV9HGpTY/158025.jpg');"></div>
-            <div class="col-content">
-                <h2 class="col-title">Кризисен М.</h2>
-                <p class="text-sm uppercase tracking-widest mb-6 opacity-80">Стратегия & Подкрепа</p>
-                <span class="col-btn">Научи повече</span>
-            </div>
-        </div>
-
-    </div>
-
-    <section id="contact" class="py-24 bg-boho-beige px-6">
-        <div class="max-w-xl mx-auto text-center">
-            <h2 class="font-serif text-3xl mb-12">Свържете се с мен</h2>
+    <section id="contact" class="py-24 px-6 bg-boho-beige">
+        <div class="max-w-xl mx-auto bg-white p-12 shadow-sm">
+            <h2 class="font-serif text-3xl mb-8 text-center">Свържете се с мен</h2>
             <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4">
-                <input type="text" name="name" placeholder="Име" class="w-full p-5 border-none outline-none rounded-lg shadow-sm">
-                <input type="email" name="email" placeholder="Имейл" class="w-full p-5 border-none outline-none rounded-lg shadow-sm">
-                <textarea name="message" placeholder="Как мога да Ви помогна?" rows="4" class="w-full p-5 border-none outline-none rounded-lg shadow-sm"></textarea>
-                <button type="submit" class="w-full bg-boho-stone text-white py-5 uppercase tracking-widest text-xs font-bold hover:bg-boho-clay transition-all rounded-lg">
-                    Изпрати запитване
+                <input type="text" name="name" placeholder="Име" class="w-full p-4 border border-stone-100 outline-none focus:border-boho-clay">
+                <input type="email" name="email" placeholder="Имейл" class="w-full p-4 border border-stone-100 outline-none focus:border-boho-clay">
+                <textarea name="message" placeholder="Съобщение" rows="4" class="w-full p-4 border border-stone-100 outline-none focus:border-boho-clay"></textarea>
+                <button type="submit" class="w-full bg-boho-stone text-white py-4 uppercase tracking-widest text-xs font-bold hover:bg-boho-clay transition-all">
+                    Изпрати
                 </button>
             </form>
         </div>
     </section>
+
+    <footer class="py-12 text-center text-[10px] uppercase tracking-[0.3em] opacity-50">
+        Д-р Богомила Колева &copy; 2025
+    </footer>
 
 </body>
 </html>
