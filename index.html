@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Д-р Богомила Колева | Психология и Мениджмънт</title>
+    <title>Д-р Богомила Колева | Персонален коуч и ментор</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -14,10 +15,10 @@
                 extend: {
                     colors: {
                         boho: {
-                            beige: '#FDF8F3', // Неутрален фон
-                            accent: '#4ade80', // "Pop of green" - акцентното зелено
-                            stone: '#3E3C3A',
-                            sand: '#EADDCA'
+                            beige: '#F9F5F2',
+                            clay: '#B88B7A', 
+                            accent: '#4ade80', // Акцентното зелено от Дизайн 8
+                            stone: '#4A4A4A'
                         }
                     },
                     fontFamily: {
@@ -30,105 +31,183 @@
     </script>
     
     <style>
-        body { background-color: #FDF8F3; color: #3E3C3A; overflow-x: hidden; }
-        
-        /* Специфично за Дизайн №8: Изчистена структура и акцентно заглавие */
-        .pop-color {
-            color: #4ade80; /* Яркото зелено от описанието */
-        }
-
-        .hero-image-container {
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
+        body { background-color: #F9F5F2; color: #4A4A4A; }
+        .hero-title { line-height: 1.1; }
+        .accent-text { color: #4ade80; }
     </style>
 </head>
 <body class="font-sans antialiased">
 
-    <nav class="max-w-7xl mx-auto px-6 py-10 flex justify-between items-center">
-        <a href="#" class="text-xl font-serif font-bold tracking-tighter">Д-р Б. Колева</a>
-        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-bold">
-            <a href="#services" class="hover:text-boho-accent transition-colors">Услуги</a>
+    <nav class="py-8 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+        <a href="#" class="text-xl font-serif font-bold tracking-tight">Д-р Б. Колева</a>
+        <div class="hidden md:flex space-x-10 uppercase text-[11px] tracking-[0.2em] font-medium">
+            <a href="#philosophy" class="hover:text-boho-accent transition-colors">Философия</a>
+            <a href="#why-coaching" class="hover:text-boho-accent transition-colors">Защо Коучинг?</a>
             <a href="#contact" class="hover:text-boho-accent transition-colors">Контакт</a>
         </div>
+        <a href="#contact" class="md:hidden text-boho-stone"><i class="fas fa-bars text-2xl"></i></a>
     </nav>
 
-    <header class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            
+    <header class="relative px-6 md:px-12 py-12 md:py-24 max-w-7xl mx-auto overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="order-2 lg:order-1">
-                <h1 class="text-5xl lg:text-7xl font-serif mb-8 leading-tight text-boho-stone">
-                    Пространство за <br> <span class="pop-color italic">баланс и растеж.</span>
+                <span class="inline-block text-boho-clay uppercase text-[12px] tracking-[0.3em] font-bold mb-6">
+                    Психология & Персонален Коучинг
+                </span>
+                <h1 class="hero-title text-5xl md:text-7xl font-serif mb-8 italic">
+                    Твоят път към <br> <span class="font-normal not-italic accent-text">вътрешен баланс.</span>
                 </h1>
-                <p class="text-xl text-stone-500 mb-12 leading-relaxed font-light max-w-md">
-                    Когато нещата станат трудни, простите решения са най-ефективни. Открийте своя път с професионална подкрепа.
+                <p class="text-xl text-stone-500 mb-10 max-w-md leading-relaxed font-light">
+                    Вярвам, че притежавате много повече потенциал, отколкото осъзнавате. Нека го превърнем в резултати.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#contact" class="bg-boho-stone text-white px-12 py-5 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-boho-accent transition-all text-center">
-                        Запазете час
-                    </a>
-                </div>
+                <a href="#contact" class="inline-block px-12 py-5 bg-boho-stone text-white rounded-full font-medium hover:bg-boho-accent transition-all shadow-lg uppercase tracking-widest text-xs">
+                    Запази час
+                </a>
             </div>
 
             <div class="order-1 lg:order-2">
-                <div class="hero-image-container">
-                    <img src="https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg" 
-                         alt="Д-р Богомила Колева" 
-                         class="w-full h-auto object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+                <div class="rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+                    <img src="https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg" alt="Д-р Богомила Колева" class="w-full h-auto object-cover">
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-24 bg-white/50 border-y border-boho-sand/30">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="font-serif text-3xl mb-16">Как помагам</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div>
-                    <div class="text-boho-accent text-3xl mb-4 font-serif">01.</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest">Коучинг</h3>
-                    <p class="text-stone-400 font-light text-sm">Персонализиран подход за лидери и визионери.</p>
+    <section id="philosophy" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif mb-12 text-center">Моята философия като персонален коуч</h2>
+            <div class="space-y-8 text-lg leading-relaxed text-stone-600 font-light">
+                <p>
+                    Като персонален коуч вярвам, че хората притежават много повече потенциал, отколкото осъзнават или позволяват да изразят. Моята роля е да ги подкрепя да разпознаят този вътрешен ресурс, да му се доверят и да го превърнат в действие, увереност и резултати.
+                </p>
+                
+                <div class="bg-boho-beige p-8 md:p-12 rounded-[2rem] border-l-4 border-boho-accent">
+                    <h3 class="font-serif text-2xl mb-6 italic text-boho-stone">Коучингът е процес, в който клиентът открива:</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-boho-accent"></i> яснота в целите си</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-boho-accent"></i> увереност в собствените способности</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-boho-accent"></i> посока, която има смисъл</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-boho-accent"></i> вътрешна мотивация и стабилност</li>
+                    </ul>
                 </div>
-                <div>
-                    <div class="text-boho-accent text-3xl mb-4 font-serif">02.</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest">Терапия</h3>
-                    <p class="text-stone-400 font-light text-sm">Грижа за емоционалното здраве и устойчивост.</p>
-                </div>
-                <div>
-                    <div class="text-boho-accent text-3xl mb-4 font-serif">03.</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest">Кризисен М.</h3>
-                    <p class="text-stone-400 font-light text-sm">Ефективни стратегии за критични ситуации.</p>
-                </div>
+
+                <p>
+                    Моята задача е да помогна човек да се изправи на собствената си вътрешна опора — да развие увереност, която не зависи от външни фактори.
+                </p>
+                
+                <p class="text-2xl font-serif italic text-center text-boho-clay pt-8">
+                    👉 Моята цел е една: да подкрепя своя клиент да ме надмине.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6">
-        <div class="max-w-2xl mx-auto text-center">
-            <h2 class="font-serif text-4xl mb-6">Нека започнем разговор</h2>
-            <p class="text-stone-400 mb-12 font-light italic">Попълнете формата и ще се свържа с Вас възможно най-скоро.</p>
+    <section id="why-coaching" class="py-24 px-6 bg-boho-beige">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif mb-16 text-center">Кога и къде използваме коучинг?</h2>
             
-            <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4 text-left">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Вашето име" class="w-full bg-white p-5 border border-stone-100 outline-none focus:border-boho-accent">
-                    <input type="email" name="email" placeholder="Вашият имейл" class="w-full bg-white p-5 border border-stone-100 outline-none focus:border-boho-accent">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-boho-accent/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-boho-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-6">За екипи</h3>
+                    <ul class="space-y-3 text-sm text-stone-500 font-light">
+                        <li>• Мотивиране за високи резултати</li>
+                        <li>• Подобряване на взаимодействието</li>
+                        <li>• Ясно разпределяне на ролите</li>
+                        <li>• Обща посока и устойчиви навици</li>
+                    </ul>
                 </div>
-                <textarea name="message" placeholder="Вашето съобщение" rows="5" class="w-full bg-white p-5 border border-stone-100 outline-none focus:border-boho-accent"></textarea>
-                <button type="submit" class="w-full bg-boho-stone text-white py-6 uppercase tracking-[0.3em] text-[11px] font-bold hover:bg-boho-accent transition-all">
-                    Изпрати
+
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow border-t-4 border-boho-accent">
+                    <div class="w-12 h-12 bg-boho-accent/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-sync text-boho-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-6">Екипна динамика</h3>
+                    <ul class="space-y-3 text-sm text-stone-500 font-light">
+                        <li>• Подобряване на комуникацията</li>
+                        <li>• Разрешаване на напрежения</li>
+                        <li>• Подкрепяща работна среда</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-boho-accent/20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user text-boho-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-6">Индивидуално ниво</h3>
+                    <ul class="space-y-3 text-sm text-stone-500 font-light">
+                        <li>• Подобряване на взаимоотношения</li>
+                        <li>• Изграждане на вътрешна яснота</li>
+                        <li>• Справяне с пречки и блокажи</li>
+                        <li>• Дефиниране на цели</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <p class="text-lg font-medium accent-text uppercase tracking-widest">
+                    👉 Коучингът е за всеки, който желае развитие и собствена посока.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white overflow-hidden relative">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl font-serif mb-8 text-boho-stone">Какво прави коучинга уникален?</h2>
+            <p class="text-xl font-light mb-12 text-stone-500">
+                Той не е просто техника, а начин на мислене, отношение и взаимодействие с хората.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <div class="p-6 border border-boho-beige rounded-2xl">
+                    <span class="block text-boho-accent font-bold mb-2">Вяра</span>
+                    <span class="text-[10px] uppercase tracking-widest">Вътрешна</span>
+                </div>
+                <div class="p-6 border border-boho-beige rounded-2xl">
+                    <span class="block text-boho-accent font-bold mb-2">Осъзнатост</span>
+                    <span class="text-[10px] uppercase tracking-widest">Дълбока</span>
+                </div>
+                <div class="p-6 border border-boho-beige rounded-2xl">
+                    <span class="block text-boho-accent font-bold mb-2">Отговорност</span>
+                    <span class="text-[10px] uppercase tracking-widest">Лична</span>
+                </div>
+                <div class="p-6 border border-boho-beige rounded-2xl">
+                    <span class="block text-boho-accent font-bold mb-2">Възможности</span>
+                    <span class="text-[10px] uppercase tracking-widest">Създаване</span>
+                </div>
+            </div>
+
+            <div class="p-10 bg-boho-stone text-white rounded-[3rem]">
+                <p class="text-xl leading-relaxed italic">
+                    "Основната цел е вярата в собствените способности, независимо от предизвикателството. Това е процес, който трансформира начина, по който се движите през живота."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-boho-beige">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-4xl font-serif mb-12">Започни своята промяна</h2>
+            <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-6 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="Име" placeholder="Име" class="w-full bg-white p-5 rounded-2xl outline-none border border-transparent focus:border-boho-accent">
+                    <input type="email" name="Email" placeholder="Имейл" class="w-full bg-white p-5 rounded-2xl outline-none border border-transparent focus:border-boho-accent">
+                </div>
+                <textarea name="Съобщение" rows="5" placeholder="Твоята история..." class="w-full bg-white p-5 rounded-2xl outline-none border border-transparent focus:border-boho-accent"></textarea>
+                <button type="submit" class="w-full py-6 bg-boho-accent text-white font-bold rounded-2xl hover:bg-boho-stone transition-all uppercase tracking-[0.3em] text-xs shadow-lg shadow-boho-accent/20">
+                    Изпрати съобщение
                 </button>
             </form>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-[10px] uppercase tracking-[0.4em] text-stone-300">
-        &copy; 2025 Д-р Богомила Колева | Simple & Effective
+    <footer class="py-12 text-center text-[10px] tracking-[0.4em] uppercase text-stone-400">
+        <p>Д-р Богомила Колева &copy; 2025</p>
+        <p class="mt-3">Психология | Коучинг | Личностно развитие</p>
     </footer>
 
 </body>
 </html>
-
-
-
-
