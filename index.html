@@ -1,9 +1,3 @@
-Извинявай, явно в предишния код линкът към снимката ти е бил леко променен или блокиран. Сега проверих адреса внимателно и го поставих точно така, както го изпрати.
-
-Също така направих малка корекция в CSS стила (background-position), за да съм сигурен, че лицето ти ще се вижда идеално в кръга/рамката, без да се изрязва.
-
-Ето финалния код с двете снимки, интегрирани в любимия ти дизайн:
-
 HTML
 
 <!DOCTYPE html>
@@ -11,7 +5,7 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Д-р Богомила Колева | Персонален коуч и ментор</title>
+    <title>Д-р Богомила Колева | Кризисен мениджмънт и Психология</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,23 +35,18 @@ HTML
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(84, 130, 118, 0.2); }
         .hero-bg { background: linear-gradient(135deg, #f4f7f6 0%, #c5d9d3 100%); }
         
-        /* ПЪРВАТА СНИМКА (ПОРТРЕТ) */
+        /* ВАШАТА СНИМКА */
         .profile-img { 
-            background-image: url('https://i.ibb.co/S4B8d4j9/viber-image-2025-12-13-23-21-31-839.jpg'); 
-            background-size: cover; 
-            background-position: center 20%; /* Фокус върху лицето */
+            background-image: url('https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg'); 
+            background-size: cover; background-position: center;
         }
 
-        /* ВТОРАТА СНИМКА (С ЧАШАТА) - БАНЕР */
+        /* ДИЗАЙНЕРСКИЯТ БАНЕР (ПЛАНИНАТА) */
         .landscape-banner {
-            background-image: linear-gradient(rgba(38, 55, 51, 0.4), rgba(38, 55, 51, 0.4)), url('https://i.ibb.co/BV9HGpTY/158025.jpg');
+            background-image: linear-gradient(rgba(38, 55, 51, 0.5), rgba(38, 55, 51, 0.5)), url('https://i.ibb.co/BV9HGpTY/158025.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-        }
-
-        @media (max-width: 768px) {
-            .landscape-banner { background-attachment: scroll; }
         }
     </style>
 </head>
@@ -66,25 +55,20 @@ HTML
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-100 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16 md:h-20">
             <a href="#" class="text-lg md:text-2xl font-serif font-bold text-brand-600">Д-р Б. Колева</a>
-            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
-                <a href="#about" class="hover:text-brand-600 transition-colors">Философия</a>
-                <a href="#services" class="hover:text-brand-600 transition-colors">Услуги</a>
-                <a href="#contact" class="hover:text-brand-600 transition-colors">Контакт</a>
-            </div>
-            <a href="#contact" class="bg-brand-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:bg-brand-700 transition-all">Запази час</a>
+            <a href="#contact" class="bg-brand-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:bg-brand-700 transition-all">Контакт</a>
         </div>
     </nav>
 
     <header class="relative pt-28 pb-16 md:pt-48 md:pb-32 hero-bg text-center">
         <div class="max-w-4xl mx-auto px-4">
             <span class="inline-block py-1 px-4 rounded-full bg-white/60 text-brand-800 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 border border-brand-200">
-                Психология & Персонален Коучинг
+                Кризисен мениджмънт и Психология
             </span>
             <h1 class="text-3xl md:text-6xl font-serif font-extrabold text-stone-800 leading-tight mb-6">
                 Преоткрий <span class="text-brand-600 italic">своя ресурс</span> за промяна
             </h1>
             <p class="text-base md:text-xl text-stone-700 mb-10 leading-relaxed font-light">
-                Интегриран подход чрез соматична психология, експертен коучинг и стратегия за изграждане на устойчивост.
+                Интегриран подход чрез соматична психология, експертен коучинг и стратегия в кризисния мениджмънт.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#services" class="px-8 py-4 bg-brand-600 text-white rounded-full font-bold shadow-lg hover:bg-brand-700 transition-all">Разгледай услугите</a>
@@ -99,21 +83,20 @@ HTML
                 <div class="profile-img aspect-[4/5] rounded-[2rem] shadow-2xl border-[8px] border-sand-50"></div>
                 <div>
                     <span class="text-brand-600 font-bold uppercase tracking-widest text-xs mb-4 block">Представяне</span>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-6">Вярвам в твоя вътрешен ресурс</h2>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-6">Свързвам емоциите, тялото и професионалния успех</h2>
                     <p class="text-lg text-stone-600 leading-relaxed mb-6 font-light">
-                        Вярвам, че хората притежават много повече потенциал, отколкото осъзнават. Моята роля е да ви подкрепя да разпознаете този вътрешен ресурс, да му се доверите и да го превърнете в действие.
+                        Работя чрез <strong>коучинг, кризисен мениджмънт и соматична психология</strong>, за да подкрепям хора и екипи в разпознаването на връзката между емоциите и тялото. Като <strong>доктор по кризисен мениджмънт</strong> помагам за повишаване на устойчивостта и ефективната адаптация към промяна.
                     </p>
-                    <p class="text-xl font-serif text-brand-600 italic font-bold">👉 "Моята цел е една: да подкрепя своите клиенти да ме надминат."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="landscape-banner py-32 md:py-56 text-center text-white relative">
+    <section class="landscape-banner py-32 md:py-48 text-center text-white relative">
         <div class="max-w-4xl mx-auto px-4">
             <i class="fas fa-quote-left text-brand-300 text-3xl mb-6 block"></i>
-            <h2 class="text-2xl md:text-4xl font-serif italic leading-relaxed drop-shadow-lg">
-                „Коучингът е процес, в който клиентът открива яснота, посока и смисъл.“
+            <h2 class="text-2xl md:text-4xl font-serif italic leading-relaxed">
+                „Във всяка криза се крие ресурс за нова посока и по-висока устойчивост.“
             </h2>
         </div>
     </section>
@@ -121,47 +104,86 @@ HTML
     <section id="services" class="py-16 md:py-24 bg-brand-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800">Направления</h2>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-4">Насоки на работа</h2>
+                <p class="text-stone-500">Изберете пътя, който е подходящ за Вашата ситуация.</p>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 shadow-sm">
-                    <h3 class="text-xl font-serif font-bold mb-4">За Екипи</h3>
-                    <p class="text-stone-600 text-sm">Мотивиране за високи резултати и подобряване на взаимодействието.</p>
+                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-gem"></i></div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Индивидуален Коучинг</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow">Лидерско развитие и управление на стреса чрез осъзнаване на ресурсите.</p>
+                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-600 text-brand-600 font-bold text-center hover:bg-brand-600 hover:text-white transition-all">Запиши час</a>
                 </div>
-                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 shadow-sm">
-                    <h3 class="text-xl font-serif font-bold mb-4 text-brand-600">Терапия</h3>
-                    <p class="text-stone-600 text-sm">Соматична психология за преработване на емоционални блокажи.</p>
+
+                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-heart"></i></div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Индивидуална Терапия</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow">Соматична психология за преработване на емоционални блокажи.</p>
+                    <a href="#contact" class="w-full py-4 rounded-xl bg-brand-600 text-white font-bold text-center shadow-lg hover:bg-brand-700 transition-all">Запиши час</a>
                 </div>
-                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 shadow-sm">
-                    <h3 class="text-xl font-serif font-bold mb-4">Коучинг</h3>
-                    <p class="text-stone-600 text-sm">Постигане на цели и изграждане на вътрешна стабилност.</p>
+
+                <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-users-rays"></i></div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Групов Коучинг</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow">Кризисен мениджмънт и екипна синергия за организации.</p>
+                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-600 text-brand-600 font-bold text-center hover:bg-brand-600 hover:text-white transition-all">Запитване</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-white">
+    <section id="contact" class="py-16 md:py-24 bg-white text-center">
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-sand-50 rounded-[3rem] p-8 md:p-12 border border-brand-50 shadow-inner">
                 <h2 class="text-3xl font-serif font-bold text-stone-800 mb-8 text-center">Контакт</h2>
-                <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4">
-                    <input type="text" name="Име" required placeholder="Вашето Име" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" name="Име" required placeholder="Вашето Име" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                        <input type="tel" name="Телефон" required placeholder="Телефон" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
                     <input type="email" name="Email" required placeholder="Имейл адрес" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
                     <textarea name="Съобщение" rows="3" required placeholder="Вашето съобщение..." class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
-                    <button type="submit" class="w-full bg-brand-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-brand-700 transition-all">ИЗПРАТИ</button>
+                    
+                    <div class="p-4 bg-white rounded-2xl shadow-sm flex items-center justify-between border border-brand-100">
+                        <span class="text-stone-700 font-bold">3 + 4 = ?</span>
+                        <input type="text" name="spam-check" required pattern="7" class="w-20 px-3 py-2 rounded-xl bg-sand-50 border-none text-center font-bold outline-none focus:ring-2 focus:ring-brand-500" placeholder="?">
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-brand-700 transition-all transform active:scale-95 flex items-center justify-center gap-3">
+                        <i class="fas fa-paper-plane"></i> Изпрати Запитването
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-stone-900 text-stone-500 py-10 text-center">
-        <p class="text-white font-serif mb-4 uppercase tracking-widest">Д-р Богомила Колева</p>
-        <p class="text-[10px] uppercase opacity-40">&copy; 2025 BALANSIRANE.BG</p>
+    <footer class="bg-stone-900 text-stone-500 py-12 text-center">
+        <p class="text-white font-serif text-lg mb-6 tracking-widest uppercase">Д-р Богомила Колева</p>
+        <div class="flex justify-center space-x-8 mb-8 text-xl">
+            <a href="#" onclick="showQrCodeModal(event)" class="hover:text-brand-400 transition-colors"><i class="fas fa-qrcode"></i></a>
+            <a href="#contact" class="hover:text-brand-400 transition-colors"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-[10px] uppercase tracking-widest opacity-40">&copy; 2025 Всички права запазени.</p>
     </footer>
 
+    <div id="qrModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeQrCodeModal()">
+        <div class="bg-white rounded-3xl p-6 max-w-[280px] w-full mx-4" onclick="event.stopPropagation()">
+            <div id="qrcode" class="flex justify-center mb-4"></div>
+            <p class="text-center text-[10px] text-stone-400 tracking-widest font-bold uppercase">BALANSIRANE.BG</p>
+        </div>
+    </div>
+
+    <script>
+        function generateQrCode() {
+            const qrcodeContainer = document.getElementById('qrcode');
+            qrcodeContainer.innerHTML = '';
+            new QRCode(qrcodeContainer, { text: window.location.href, width: 180, height: 180, colorDark: "#263733", colorLight: "#ffffff" });
+        }
+        function showQrCodeModal(e) { e.preventDefault(); generateQrCode(); document.getElementById('qrModal').classList.remove('hidden'); document.getElementById('qrModal').classList.add('flex'); }
+        function closeQrCodeModal() { document.getElementById('qrModal').classList.remove('flex'); document.getElementById('qrModal').classList.add('hidden'); }
+    </script>
 </body>
 </html>
-
-
 
 
