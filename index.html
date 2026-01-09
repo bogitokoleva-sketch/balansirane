@@ -6,7 +6,6 @@
     <title>Д-р Богомила Колева | Кризисен мениджмънт и Психология</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <script>
@@ -31,113 +30,138 @@
     </script>
     
     <style>
-        /* Специфично за Дизайн №9: Снимка на цял екран */
-        .hero-full {
+        /* СТРУКТУРА 1:1 С ДИЗАЙН №9 */
+        body, html { margin: 0; padding: 0; background-color: #FDF8F3; }
+
+        .hero-container {
+            position: relative;
             height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg');
+            width: 100%;
+            display: flex;
+            align-items: center; /* Центрира кутията вертикално */
+            justify-content: center; /* Центрира кутията хоризонтално */
+            overflow: hidden;
+        }
+
+        /* ФОНОВАТА СНИМКА НА ЦЯЛ ЕКРАН */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg');
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            z-index: 1;
+        }
+
+        /* БЯЛАТА КУТИЯ С ТЕКСТА (Централен елемент в Дизайн 9) */
+        .content-box {
             position: relative;
+            z-index: 10;
+            background-color: white;
+            padding: 60px 50px;
+            max-width: 550px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        /* Цветният блок за текста */
-        .text-block {
-            background-color: rgba(253, 248, 243, 0.95);
-            padding: 3rem;
-            max-width: 600px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Името на практиката в долната част (дизайн 9) */
-        .site-title-bottom {
+        /* ИМЕТО НА ПРАКТИКАТА ДОЛУ (Специфично за Дизайн 9) */
+        .bottom-brand-name {
             position: absolute;
             bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            font-size: 0.75rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
             color: white;
-            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.6em;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* МЕНЮТО (Дискретно горе вдясно) */
+        .top-nav {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            z-index: 20;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-left: 30px;
+            font-weight: 500;
         }
     </style>
 </head>
-<body class="font-sans antialiased text-boho-stone">
+<body>
 
-    <nav class="fixed top-0 w-full z-50 p-6 flex justify-end">
-        <a href="#contact" class="bg-boho-clay text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg hover:bg-boho-stone transition-all">
-            Контакт
-        </a>
-    </nav>
+    <div class="hero-container">
+        <div class="background-image"></div>
 
-    <header class="hero-full">
-        <div class="text-block text-center md:text-left mx-4" data-aos="fade-up">
-            <span class="text-boho-clay uppercase text-[10px] tracking-[0.3em] font-bold mb-4 block">
-                Вашият път към баланса
-            </span>
-            <h1 class="text-4xl md:text-6xl font-serif mb-6 leading-tight">
-                Преодолей кризата с <br><span class="italic">увереност.</span>
+        <nav class="top-nav hidden md:block">
+            <a href="#services" class="nav-link">Услуги</a>
+            <a href="#about" class="nav-link">За мен</a>
+            <a href="#contact" class="nav-link">Контакт</a>
+        </nav>
+
+        <div class="content-box">
+            <h2 class="font-serif text-boho-clay italic text-xl mb-4">Добре дошли</h2>
+            <h1 class="font-serif text-4xl md:text-5xl text-boho-stone mb-6 leading-tight">
+                Място за подкрепа и <br> нова стратегия
             </h1>
-            <p class="text-boho-stone/80 text-lg mb-8 font-light">
-                Индивидуален подход, съчетаващ психология и стратегически мениджмънт.
+            <p class="font-sans text-stone-500 font-light leading-relaxed mb-10">
+                Специализирана помощ при кризи и емоционални трудности. <br>
+                Преоткрийте своя вътрешен ресурс.
             </p>
-            <div class="flex flex-col md:flex-row gap-4">
-                <a href="#services" class="bg-boho-stone text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-boho-clay transition-all">
-                    Услуги
-                </a>
-                <a href="#about" class="border border-boho-stone px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all">
-                    За мен
-                </a>
-            </div>
+            <a href="#contact" class="inline-block bg-boho-clay text-white px-10 py-4 uppercase tracking-[0.2em] text-[11px] font-bold hover:bg-boho-stone transition-all">
+                Запазете час
+            </a>
         </div>
 
-        <div class="site-title-bottom">
+        <div class="bottom-brand-name">
             Д-р Богомила Колева
         </div>
-    </header>
+    </div>
 
-    <section id="services" class="py-24 px-6 bg-boho-beige">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div>
-                    <h3 class="font-serif text-2xl mb-4 border-b border-boho-sand pb-4">Коучинг</h3>
-                    <p class="text-boho-stone/70 leading-relaxed font-light mb-6">Откриване на нови хоризонти и развитие на лидерския потенциал.</p>
-                    <a href="#contact" class="text-boho-clay font-bold text-xs uppercase tracking-widest">Детайли</a>
-                </div>
-                <div>
-                    <h3 class="font-serif text-2xl mb-4 border-b border-boho-sand pb-4">Терапия</h3>
-                    <p class="text-boho-stone/70 leading-relaxed font-light mb-6">Работа с емоциите и тялото за трайно справяне със стреса.</p>
-                    <a href="#contact" class="text-boho-clay font-bold text-xs uppercase tracking-widest">Детайли</a>
-                </div>
-                <div>
-                    <h3 class="font-serif text-2xl mb-4 border-b border-boho-sand pb-4">Кризисен М.</h3>
-                    <p class="text-boho-stone/70 leading-relaxed font-light mb-6">Професионални решения за сложни ситуации в екипи и организации.</p>
-                    <a href="#contact" class="text-boho-clay font-bold text-xs uppercase tracking-widest">Детайли</a>
-                </div>
+    <section id="services" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 border-b border-boho-sand pb-4 inline-block">Коучинг</h3>
+                <p class="text-stone-400 font-light text-sm mt-4">Личностно развитие и лидерство.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl mb-4 border-b border-boho-sand pb-4 inline-block">Терапия</h3>
+                <p class="text-stone-400 font-light text-sm mt-4">Соматична психология и емоции.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl mb-4 border-b border-boho-sand pb-4 inline-block">Кризисен М.</h3>
+                <p class="text-stone-400 font-light text-sm mt-4">Стратегии за организации и екипи.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6 bg-white">
-        <div class="max-w-xl mx-auto">
-            <h2 class="text-3xl font-serif mb-12 text-center italic">Свържете се с мен</h2>
-            <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-6">
-                <input type="text" name="Име" placeholder="Вашето име" class="w-full bg-boho-beige border-none p-5 rounded-sm outline-none">
-                <input type="email" name="Email" placeholder="Имейл адрес" class="w-full bg-boho-beige border-none p-5 rounded-sm outline-none">
-                <textarea name="Съобщение" rows="4" placeholder="С какво мога да помогна?" class="w-full bg-boho-beige border-none p-5 rounded-sm outline-none"></textarea>
-                <button type="submit" class="w-full py-6 bg-boho-clay text-white font-bold uppercase tracking-[0.3em] hover:bg-boho-stone transition-all">
+    <section id="contact" class="py-24 bg-boho-beige px-6">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="font-serif text-3xl mb-12">Свържете се с мен</h2>
+            <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Име" class="w-full p-4 border-none outline-none">
+                <input type="email" name="email" placeholder="Имейл" class="w-full p-4 border-none outline-none">
+                <textarea name="message" placeholder="Съобщение" rows="4" class="w-full p-4 border-none outline-none"></textarea>
+                <button type="submit" class="w-full bg-boho-stone text-white py-4 uppercase tracking-widest text-xs font-bold hover:bg-boho-clay transition-all">
                     Изпрати
                 </button>
             </form>
         </div>
     </section>
-
-    <footer class="py-12 text-center bg-boho-beige text-[10px] tracking-[0.4em] uppercase opacity-60">
-        &copy; 2025 Д-р Богомила Колева
-    </footer>
 
 </body>
 </html>
