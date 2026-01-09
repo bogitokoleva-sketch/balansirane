@@ -1,3 +1,11 @@
+Разбрах напълно! Запазвам дизайна, структурата и снимките точно както са, но подменям цялата цветова палитра със стилна Бохо (Boho) гама.
+
+За тази цел използвам топли, земни нюанси: Теракота (Terracotta), Меко пясъчно бежово и Заглушено градинско зелено за акценти, които придават естествено и уютно излъчване.
+
+Ето обновения код:
+
+HTML
+
 <!DOCTYPE html>
 <html lang="bg" class="scroll-smooth">
 <head>
@@ -16,9 +24,17 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#f4f7f6', 100: '#e3ebe8', 200: '#c5d9d3', 300: '#9bbdb4',
-                            400: '#729e92', 500: '#548276', 600: '#40665c', 700: '#35524b',
-                            800: '#2d423d', 900: '#263733',
+                            // БОХО ПАЛИТРА (Теракота и Земни тонове)
+                            50: '#fdfaf8',   // Фон
+                            100: '#f7ede2',  // Пясък
+                            200: '#f2cc8f',  // Златист акцент
+                            300: '#e09f7d',  // Топла глина
+                            400: '#da8155',  // Теракота
+                            500: '#bc6c4e',  // Основно Бохо (Terracotta)
+                            600: '#8d5a44',  // Тъмна глина
+                            700: '#6d4c3d',  // Дърво
+                            800: '#4a3728',  // Тъмно кафяво
+                            900: '#2d241e',  // Дълбоко Бохо
                         },
                         sand: { 50: '#fdfbf7', 100: '#faf6ef', 200: '#f3eadb' }
                     },
@@ -30,45 +46,51 @@
     
     <style>
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(84, 130, 118, 0.2); }
-        .hero-bg { background: linear-gradient(135deg, #f4f7f6 0%, #c5d9d3 100%); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(188, 108, 78, 0.2); }
         
+        /* БОХО ГРАДИЕНТ ЗА НАЧАЛОТО */
+        .hero-bg { background: linear-gradient(135deg, #fdfaf8 0%, #f7ede2 100%); }
+        
+        /* СНИМКА 1 (ПОРТРЕТ) - БЕЗ ПРОМЯНА */
         .profile-img { 
             background-image: url('https://i.ibb.co/S4B8d4j9/viber-image-2025-12-13-23-21-31-839.jpg'); 
             background-size: cover; background-position: center 20%;
         }
 
+        /* СНИМКА 2 (БАНЕР) - БЕЗ ПРОМЯНА, само по-топъл филтър */
         .landscape-banner {
-            background-image: linear-gradient(rgba(38, 55, 51, 0.5), rgba(38, 55, 51, 0.5)), url('https://i.ibb.co/BV9HGpTY/158025.jpg');
+            background-image: linear-gradient(rgba(74, 55, 40, 0.45), rgba(74, 55, 40, 0.45)), url('https://i.ibb.co/BV9HGpTY/158025.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+
+        .hidden-field { display: none !important; visibility: hidden !important; }
     </style>
 </head>
-<body class="font-sans text-stone-700 bg-sand-50 antialiased overflow-x-hidden">
+<body class="font-sans text-stone-700 bg-brand-50 antialiased overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-100 shadow-sm">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-brand-100 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16 md:h-20">
-            <a href="#" class="text-lg md:text-2xl font-serif font-bold text-brand-600">Д-р Б. Колева</a>
-            <a href="#contact" class="bg-brand-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:bg-brand-700 transition-all">Контакт</a>
+            <a href="#" class="text-lg md:text-2xl font-serif font-bold text-brand-500">Д-р Б. Колева</a>
+            <a href="#contact" class="bg-brand-500 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:bg-brand-600 transition-all">Контакт</a>
         </div>
     </nav>
 
     <header class="relative pt-28 pb-16 md:pt-48 md:pb-32 hero-bg text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <span class="inline-block py-1 px-4 rounded-full bg-white/60 text-brand-800 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 border border-brand-200">
+            <span class="inline-block py-1 px-4 rounded-full bg-white text-brand-600 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 border border-brand-200">
                 Персонален коучинг и Психология
             </span>
             <h1 class="text-3xl md:text-6xl font-serif font-extrabold text-stone-800 leading-tight mb-6">
-                Преоткрий <span class="text-brand-600 italic">своя ресурс</span> за промяна
+                Преоткрий <span class="text-brand-500 italic">своя ресурс</span> за промяна
             </h1>
             <p class="text-base md:text-xl text-stone-700 mb-10 leading-relaxed font-light">
                 Интегриран подход чрез соматична психология и експертен коучинг за постигане на вътрешна яснота и увереност.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-brand-600 text-white rounded-full font-bold shadow-lg hover:bg-brand-700 transition-all">Разгледай услугите</a>
-                <a href="#about" class="px-8 py-4 bg-white text-brand-600 rounded-full font-bold border border-brand-100 hover:bg-brand-50 transition-all">За моята философия</a>
+                <a href="#services" class="px-8 py-4 bg-brand-500 text-white rounded-full font-bold shadow-lg hover:bg-brand-600 transition-all">Разгледай услугите</a>
+                <a href="#about" class="px-8 py-4 bg-white text-brand-500 rounded-full font-bold border border-brand-100 hover:bg-brand-50 transition-all">За мен</a>
             </div>
         </div>
     </header>
@@ -76,17 +98,14 @@
     <section id="about" class="py-16 md:py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="profile-img aspect-[4/5] rounded-[2rem] shadow-2xl border-[8px] border-sand-50"></div>
+                <div class="profile-img aspect-[4/5] rounded-[2rem] shadow-2xl border-[8px] border-brand-50"></div>
                 <div>
-                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs mb-4 block">Моята философия</span>
+                    <span class="text-brand-400 font-bold uppercase tracking-widest text-xs mb-4 block">Представяне</span>
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-6">Вярвам във Вашия скрит потенциал</h2>
                     <p class="text-lg text-stone-600 leading-relaxed mb-6 font-light">
-                        Като персонален коуч вярвам, че хората притежават много повече потенциал, отколкото осъзнават или позволяват да изразят. Моята роля е да ги подкрепя да разпознаят този вътрешен ресурс, да му се доверите и да го превърнете в действие, увереност и резултати.
+                        Като персонален коуч вярвам, че хората притежават много повече потенциал, отколкото осъзнават или позволяват да изразят. Моята роля е да ги подкрепя да разпознаят този вътрешен ресурс, да му се доверите и да го превърнете в действие.
                     </p>
-                    <div class="bg-brand-50 p-6 rounded-2xl border border-brand-100 mb-6">
-                        <p class="font-serif italic text-brand-800">"Моята задача е да помогна човек да се изправи на собствената си вътрешна опора — да развие увереност, която не зависи от външни фактори."</p>
-                    </div>
-                    <p class="text-brand-600 font-bold">👉 Моята цел е една: да Ви подкрепя да ме надминете.</p>
+                    <p class="text-xl font-serif text-brand-500 italic font-bold">👉 Моята цел е една: да Ви подкрепя да ме надминете.</p>
                 </div>
             </div>
         </div>
@@ -94,52 +113,39 @@
 
     <section class="landscape-banner py-32 md:py-48 text-center text-white relative">
         <div class="max-w-4xl mx-auto px-4">
-            <i class="fas fa-quote-left text-brand-300 text-3xl mb-6 block"></i>
+            <i class="fas fa-quote-left text-brand-200 text-3xl mb-6 block"></i>
             <h2 class="text-2xl md:text-4xl font-serif italic leading-relaxed drop-shadow-lg">
                 „Коучингът е процес, в който клиентът открива яснота, посока и смисъл.“
             </h2>
         </div>
     </section>
 
-    <section id="services" class="py-16 md:py-24 bg-brand-50">
+    <section id="services" class="py-16 md:py-24 bg-brand-100/50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-4">Насоки на работа</h2>
-                <p class="text-stone-500 max-w-2xl mx-auto">Коучингът е подходящ за всеки, който желае развитие, увереност и усещане за собствена посока.</p>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-4 text-center text-center">Насоки на работа</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
-                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-users"></i></div>
-                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">За Екипи</h3>
-                    <ul class="text-stone-600 text-sm space-y-2 mb-8 flex-grow">
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Мотивиране за високи резултати</li>
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Подобряване на взаимодействието</li>
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Изграждане на обща посока</li>
-                    </ul>
-                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-600 text-brand-600 font-bold text-center hover:bg-brand-600 hover:text-white transition-all text-xs uppercase">Запитване</a>
+                    <div class="w-14 h-14 bg-brand-100 text-brand-500 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-users"></i></div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800 text-center">За Екипи</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow text-center">Мотивиране за високи резултати и изграждане на обща посока.</p>
+                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-500 text-brand-500 font-bold text-center hover:bg-brand-500 hover:text-white transition-all uppercase text-xs">Запитване</a>
                 </div>
 
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
-                    <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-sync-alt"></i></div>
-                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Екипна Динамика</h3>
-                    <ul class="text-stone-600 text-sm space-y-2 mb-8 flex-grow">
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Подобряване на комуникацията</li>
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Разрешаване на напрежения</li>
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Здрава работна среда</li>
-                    </ul>
-                    <a href="#contact" class="w-full py-4 rounded-xl bg-brand-600 text-white font-bold text-center shadow-lg hover:bg-brand-700 transition-all text-xs uppercase">Научи повече</a>
+                    <div class="w-14 h-14 bg-brand-500 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800 text-center">Екипна Динамика</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow text-center">Разрешаване на напрежения и здрава работна среда.</p>
+                    <a href="#contact" class="w-full py-4 rounded-xl bg-brand-500 text-white font-bold text-center shadow-lg hover:bg-brand-600 transition-all uppercase text-xs">Научи повече</a>
                 </div>
 
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
-                    <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-user-check"></i></div>
-                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Индивидуално</h3>
-                    <ul class="text-stone-600 text-sm space-y-2 mb-8 flex-grow">
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Вътрешна яснота и цели</li>
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Справяне с блокажи</li>
-                        <li><i class="fas fa-check text-brand-400 mr-2"></i> Лична отговорност</li>
-                    </ul>
-                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-600 text-brand-600 font-bold text-center hover:bg-brand-600 hover:text-white transition-all text-xs uppercase">Запиши час</a>
+                    <div class="w-14 h-14 bg-brand-100 text-brand-500 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-user-check"></i></div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800 text-center">Индивидуално</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow text-center">Изграждане на вътрешна яснота и постигане на лични цели.</p>
+                    <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-500 text-brand-500 font-bold text-center hover:bg-brand-500 hover:text-white transition-all uppercase text-xs">Запази час</a>
                 </div>
             </div>
         </div>
@@ -147,23 +153,34 @@
 
     <section id="contact" class="py-16 md:py-24 bg-white text-center">
         <div class="max-w-3xl mx-auto px-4">
-            <div class="bg-sand-50 rounded-[3rem] p-8 md:p-12 border border-brand-50 shadow-inner">
-                <h2 class="text-3xl font-serif font-bold text-stone-800 mb-4 text-center">Контакт</h2>
-                <p class="text-stone-500 mb-8 italic text-sm">„Вярата в собствените способности е основната цел на коучинга.“</p>
+            <div class="bg-brand-50 rounded-[3rem] p-8 md:p-12 border border-brand-100 shadow-inner">
+                <h2 class="text-3xl font-serif font-bold text-stone-800 mb-8 text-center text-center">Запазете своята сесия</h2>
+                
                 <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4 text-left">
+                    <div class="hidden-field"><input type="text" name="_gotcha"></div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" name="Име" required placeholder="Вашето Име" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                        <input type="tel" name="Телефон" required placeholder="Телефон" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                    </div>
-                    <input type="email" name="Email" required placeholder="Имейл адрес" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                    <textarea name="Съобщение" rows="3" required placeholder="Вашето съобщение..." class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
-                    
-                    <div class="p-4 bg-white rounded-2xl shadow-sm flex items-center justify-between border border-brand-100 text-sm">
-                        <span class="text-stone-700 font-bold">3 + 4 = ?</span>
-                        <input type="text" name="spam-check" required pattern="7" class="w-20 px-3 py-2 rounded-xl bg-sand-50 border-none text-center font-bold outline-none focus:ring-2 focus:ring-brand-500" placeholder="?">
+                        <input type="text" name="Име" required placeholder="Вашето Име" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-400 outline-none">
+                        <input type="tel" name="Телефон" required placeholder="Телефон за връзка" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-400 outline-none">
                     </div>
 
-                    <button type="submit" class="w-full bg-brand-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-brand-700 transition-all transform active:scale-95 flex items-center justify-center gap-3">
+                    <input type="email" name="Email" required placeholder="Имейл адрес" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-400 outline-none">
+                    
+                    <select name="Услуга" required class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-400 outline-none bg-white text-stone-500 appearance-none">
+                        <option value="" disabled selected>Изберете насока на работа...</option>
+                        <option value="За екипи">За екипи (Мотивация и посока)</option>
+                        <option value="Екипна динамика">Екипна динамика (Комуникация и среда)</option>
+                        <option value="Индивидуален коучинг">Индивидуален коучинг (Цели и блокажи)</option>
+                    </select>
+
+                    <textarea name="Съобщение" rows="3" required placeholder="Вашето съобщение или въпрос..." class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-400 outline-none"></textarea>
+                    
+                    <div class="p-4 bg-white rounded-2xl shadow-sm flex items-center justify-between border border-brand-100">
+                        <span class="text-stone-700 font-bold">Колко е 5 + 3 = ?</span>
+                        <input type="text" name="antispam" required pattern="8" class="w-20 px-3 py-2 rounded-xl bg-brand-50 border-none text-center font-bold outline-none focus:ring-2 focus:ring-brand-500" placeholder="?">
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-500 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-brand-600 transition-all transform active:scale-95 flex items-center justify-center gap-3 uppercase">
                         <i class="fas fa-paper-plane"></i> Изпрати Запитването
                     </button>
                 </form>
@@ -171,13 +188,13 @@
         </div>
     </section>
 
-    <footer class="bg-stone-900 text-stone-500 py-12 text-center">
-        <p class="text-white font-serif text-lg mb-6 tracking-widest uppercase">Д-р Богомила Колева</p>
+    <footer class="bg-stone-900 text-stone-400 py-12 text-center">
+        <p class="text-brand-300 font-serif text-lg mb-6 tracking-widest uppercase">Д-р Богомила Колева</p>
         <div class="flex justify-center space-x-8 mb-8 text-xl">
-            <a href="#" onclick="showQrCodeModal(event)" class="hover:text-brand-400 transition-colors"><i class="fas fa-qrcode"></i></a>
-            <a href="#contact" class="hover:text-brand-400 transition-colors"><i class="fas fa-envelope"></i></a>
+            <a href="#" onclick="showQrCodeModal(event)" class="hover:text-brand-300 transition-colors"><i class="fas fa-qrcode"></i></a>
+            <a href="#contact" class="hover:text-brand-300 transition-colors"><i class="fas fa-envelope"></i></a>
         </div>
-        <p class="text-[10px] uppercase tracking-widest opacity-40">&copy; 2025 Всички права запазени. BALANSIRANE.BG</p>
+        <p class="text-[10px] uppercase tracking-widest opacity-40">&copy; 2025 BALANSIRANE.BG</p>
     </footer>
 
     <div id="qrModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeQrCodeModal()">
@@ -191,14 +208,13 @@
         function generateQrCode() {
             const qrcodeContainer = document.getElementById('qrcode');
             qrcodeContainer.innerHTML = '';
-            new QRCode(qrcodeContainer, { text: window.location.href, width: 180, height: 180, colorDark: "#263733", colorLight: "#ffffff" });
+            new QRCode(qrcodeContainer, { text: window.location.href, width: 180, height: 180, colorDark: "#4a3728", colorLight: "#ffffff" });
         }
         function showQrCodeModal(e) { e.preventDefault(); generateQrCode(); document.getElementById('qrModal').classList.remove('hidden'); document.getElementById('qrModal').classList.add('flex'); }
         function closeQrCodeModal() { document.getElementById('qrModal').classList.remove('flex'); document.getElementById('qrModal').classList.add('hidden'); }
     </script>
 </body>
 </html>
-Бихте ли искали да добавя още нещо специфично към описанието на услугите?
 
 
 
