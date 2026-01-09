@@ -1,3 +1,9 @@
+Разбрах. Връщаме се към класическия „бизнес“ дизайн (зелената гама), но поставяме новата снимка, която ми изпратихте, централно в Hero секцията, точно както беше в една от предишните версии.
+
+Ето обновения код с централната снимка и новия текст за коучинг:
+
+HTML
+
 <!DOCTYPE html>
 <html lang="bg" class="scroll-smooth">
 <head>
@@ -32,10 +38,6 @@
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(84, 130, 118, 0.2); }
         .hero-bg { background: linear-gradient(135deg, #f4f7f6 0%, #c5d9d3 100%); }
-        .profile-img { 
-            background-image: url('https://i.ibb.co/67Fx17Mf/viber-image-2025-12-13-23-21-31-839.jpg'); 
-            background-size: cover; background-position: center;
-        }
     </style>
 </head>
 <body class="font-sans text-stone-700 bg-sand-50 antialiased overflow-x-hidden">
@@ -52,16 +54,21 @@
         </div>
     </nav>
 
-    <header class="relative pt-28 pb-16 md:pt-48 md:pb-32 hero-bg text-center">
+    <header class="relative pt-28 pb-16 md:pt-40 md:pb-24 hero-bg text-center">
         <div class="max-w-4xl mx-auto px-4">
             <span class="inline-block py-1 px-4 rounded-full bg-white/60 text-brand-800 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 border border-brand-200">
                 Психология & Персонален Коучинг
             </span>
-            <h1 class="text-3xl md:text-6xl font-serif font-extrabold text-stone-800 leading-tight mb-6">
+            <h1 class="text-3xl md:text-6xl font-serif font-extrabold text-stone-800 leading-tight mb-8">
                 Твоят път към <br><span class="text-brand-600 italic">вътрешен баланс</span>
             </h1>
+
+            <div class="max-w-md mx-auto mb-10">
+                <img src="https://i.ibb.co/BV9HGpTY/158025.jpg" alt="Д-р Богомила Колева" class="rounded-[3rem] shadow-2xl border-[10px] border-white mx-auto">
+            </div>
+
             <p class="text-base md:text-xl text-stone-700 mb-10 leading-relaxed font-light max-w-2xl mx-auto">
-                Като персонален коуч вярвам, че притежавате много повече потенциал, отколкото осъзнавате. Моята роля е да ви подкрепя да го превърнете в действие.
+                Вярвам, че хората притежават много повече потенциал, отколкото осъзнават. Моята роля е да ви подкрепя да го превърнете в действие и резултати.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" class="px-8 py-4 bg-brand-600 text-white rounded-full font-bold shadow-lg hover:bg-brand-700 transition-all">Запази час</a>
@@ -71,28 +78,27 @@
     </header>
 
     <section id="about" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="profile-img aspect-[4/5] rounded-[2rem] shadow-2xl border-[8px] border-sand-50"></div>
-                <div>
-                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs mb-4 block">Моята философия</span>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-6">Вярвам в твоя вътрешен ресурс</h2>
-                    <div class="space-y-4 text-stone-600 leading-relaxed font-light text-lg">
-                        <p>Вярвам, че хората притежават много повече потенциал, отколкото осъзнават или си позволяват да изразят. Моята роля е да ги подкрепя да разпознаят този вътрешен ресурс, да му се доверят и да го превърнат в действие, увереност и сила.</p>
-                        
-                        <div class="bg-brand-50 p-6 rounded-2xl border-l-4 border-brand-600 my-8">
-                            <p class="font-serif italic text-brand-800 mb-2 font-bold">Коучингът е процес, в който откриваш:</p>
-                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                                <li>• Яснота в целите</li>
-                                <li>• Увереност в способностите</li>
-                                <li>• Посока, която има смисъл</li>
-                                <li>• Вътрешна стабилност</li>
-                            </ul>
-                        </div>
-                        
-                        <p>Моята задача е да помогна човек да се изправи на собствената си вътрешна опора — да развие увереност, която не зависи от външни фактори. Моята цел е една: <strong>Да подкрепя своя клиент да ме надмине.</strong></p>
-                    </div>
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-brand-600 font-bold uppercase tracking-widest text-xs mb-4 block">Представяне</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800">Моята философия като персонален коуч</h2>
+            </div>
+            
+            <div class="space-y-6 text-lg text-stone-600 leading-relaxed font-light text-center">
+                <p>Вярвам, че хората притежават много повече потенциал, отколкото осъзнават или позволяват да изразят. Моята роля е да ги подкрепя да разпознаят този вътрешен ресурс, да му се доверят и да го превърнат в действие, увереност и резултати.</p>
+                
+                <div class="bg-brand-50 p-8 rounded-[2.5rem] border border-brand-100 my-10 inline-block text-left w-full">
+                    <h3 class="font-serif text-2xl mb-6 text-brand-800 italic font-bold text-center">Коучингът е процес, в който клиентът открива:</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-600"></i> яснота в целите си</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-600"></i> увереност в способностите</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-600"></i> посока, която има смисъл</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-600"></i> вътрешна стабилност</li>
+                    </ul>
                 </div>
+
+                <p>Моята задача е да помогна човек да се изправи на собствената си вътрешна опора — да развие увереност, която не зависи от външни фактори.</p>
+                <p class="text-2xl font-serif text-brand-600 italic font-bold pt-4 italic">"👉 Моята цел е една: да подкрепя своите клиенти да ме надминат."</p>
             </div>
         </div>
     </section>
@@ -100,45 +106,43 @@
     <section id="services" class="py-16 md:py-24 bg-brand-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-4">Направления на работа</h2>
-                <p class="text-stone-500">Коучингът е начин на мислене, отношение и взаимодействие.</p>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-4">Насоки на работа</h2>
+                <p class="text-stone-500">Коучингът е начин на мислене, отношение и взаимодействие с хората.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
                     <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">За Екипи</h3>
                     <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow">
-                        Мотивиране за високи резултати, подобряване на взаимодействието, ясно разпределение на ролите и изграждане на обща посока.
+                        Мотивиране за високи резултати, подобряване на взаимодействието, ясно разпределяне на ролите и изграждане на обща посока.
                     </p>
                     <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-600 text-brand-600 font-bold text-center hover:bg-brand-600 hover:text-white transition-all">Запитване</a>
                 </div>
 
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
                     <div class="w-14 h-14 bg-brand-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Соматична Терапия</h3>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Екипна Динамика</h3>
                     <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow">
-                        Дълбока работа за преработване на емоционални блокажи и възстановяване на баланса между ума и тялото.
+                        Подобряване на комуникацията, разрешаване на напрежения и създаване на подкрепяща работна среда.
                     </p>
-                    <a href="#contact" class="w-full py-4 rounded-xl bg-brand-600 text-white font-bold text-center shadow-lg shadow-brand-100 hover:bg-brand-700 transition-all">Запиши час</a>
+                    <a href="#contact" class="w-full py-4 rounded-xl bg-brand-600 text-white font-bold text-center shadow-lg shadow-brand-100 hover:bg-brand-700 transition-all">Научи повече</a>
                 </div>
 
                 <div class="service-card bg-white p-8 rounded-[2.5rem] border border-brand-100 flex flex-col shadow-sm">
                     <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-bullseye"></i>
+                        <i class="fas fa-user-check"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold mb-4 text-brand-800">Индивидуален Коучинг</h3>
                     <p class="text-stone-600 text-sm leading-relaxed mb-8 flex-grow">
-                        Изграждане на вътрешна яснота, постигане на цели и справяне с вътрешни пречки чрез лична отговорност и осъзнатост.
+                        Изграждане на вътрешна яснота, дефиниране и постигане на цели, и справяне с вътрешни пречки.
                     </p>
                     <a href="#contact" class="w-full py-4 rounded-xl border-2 border-brand-600 text-brand-600 font-bold text-center hover:bg-brand-600 hover:text-white transition-all">Запиши час</a>
                 </div>
-
             </div>
         </div>
     </section>
@@ -147,8 +151,8 @@
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-sand-50 rounded-[3rem] p-8 md:p-12 border border-brand-50 shadow-inner">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-serif font-bold text-stone-800 mb-2">Свържи се с мен</h2>
-                    <p class="text-stone-500">Направи първата крачка към промяната днес.</p>
+                    <h2 class="text-3xl font-serif font-bold text-stone-800 mb-2">Контакт</h2>
+                    <p class="text-stone-500">Изпратете Вашето запитване тук.</p>
                 </div>
 
                 <form action="https://formspree.io/f/mrezjawa" method="POST" class="space-y-4">
@@ -157,14 +161,14 @@
                         <input type="tel" name="Телефон" required placeholder="Телефон" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
                     </div>
                     <input type="email" name="Email" required placeholder="Имейл адрес" class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                    <textarea name="Съобщение" rows="3" required placeholder="Твоята история..." class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+                    <textarea name="Съобщение" rows="3" required placeholder="Вашето съобщение..." class="w-full px-6 py-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
                     
                     <div class="p-4 bg-white rounded-2xl shadow-sm flex items-center justify-between border border-brand-100">
                         <span class="text-stone-700 font-bold text-sm">3 + 4 = ?</span>
                         <input type="text" name="spam-check" required pattern="7" class="w-20 px-3 py-2 rounded-xl bg-sand-50 border-none text-center font-bold outline-none focus:ring-2 focus:ring-brand-500" placeholder="?">
                     </div>
 
-                    <button type="submit" class="w-full bg-brand-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-brand-700 transition-all transform active:scale-95 flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
+                    <button type="submit" class="w-full bg-brand-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-brand-700 transition-all transform active:scale-95 flex items-center justify-center gap-3">
                         <i class="fas fa-paper-plane"></i> Изпрати съобщение
                     </button>
                 </form>
@@ -200,4 +204,5 @@
     </script>
 </body>
 </html>
+
 
